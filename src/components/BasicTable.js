@@ -9,14 +9,14 @@ import "./table.css";
 function BasicTable() {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
-  const tableInstance = useTable({
+  
+  
+  //DESTRUCTURING
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
     columns,
     data,
   });
-  //DESTRUCTURING
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
 
   return (
     <table {...getTableProps()}>
@@ -24,9 +24,7 @@ function BasicTable() {
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>
-                {column.render("Header")}
-              </th>
+              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
             ))}
           </tr>
         ))}
@@ -45,7 +43,6 @@ function BasicTable() {
       </tbody>
     </table>
   );
-};
+}
 
 export default BasicTable;
-
