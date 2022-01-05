@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import  BasicTable from '../src/components/BasicTable'
+import  SortingTable from '../src/components/SortingTable'
 
 function App() {
   return (
     <React.Fragment>
-       <BasicTable />
+       <SortingTable />
     </React.Fragment>
   );
 }
